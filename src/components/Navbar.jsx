@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import Logo from "./Logo";
+import { Link } from "react-router-dom";
 
 //Style
 import {
@@ -18,11 +19,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const LinkItem = ({ link, text, menu }) => {
 	return (
-		<a href={link}>
+		<Link to={link || ""}>
 			<Button colorScheme="teal" variant="ghost" w={menu ? "full" : "auto"}>
 				{text}
 			</Button>
-		</a>
+		</Link>
 	);
 };
 
@@ -54,8 +55,8 @@ const Navbar = () => {
 					flexGrow={1}
 					mt={{ base: 4, md: 0 }}
 				>
-					<LinkItem text="Projects" />
-					<LinkItem text="Contact" />
+					<LinkItem text="Projects" link="/projects" />
+					<LinkItem text="Contact" link="/contact" />
 				</Stack>
 				<Box flex={1} align="right">
 					<Box ml={2} display={{ base: "inline-block", md: "none" }}>
