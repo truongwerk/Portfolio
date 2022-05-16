@@ -11,7 +11,7 @@ const App = () => {
 	return (
 		<div className="app">
 			<Navbar />
-			<Container maxW="container.lg" pt={14}>
+			<Container maxW="container.md" pt={14}>
 				<Routes>
 					<Route path="/" element={<About />}></Route>
 					<Route path="/projects" element={<Projects />}></Route>

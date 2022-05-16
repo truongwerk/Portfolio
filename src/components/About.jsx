@@ -1,15 +1,20 @@
+import SlideTransition from "./SlideTransition";
+
 //Style
 import {
 	AspectRatio,
 	Box,
+	Button,
 	Container,
 	Heading,
 	Image,
+	Link,
 	Text,
 	useColorModeValue,
 } from "@chakra-ui/react";
+import { MdDownload } from "react-icons/md";
 import logo from "../img/3x4.jpg";
-import SlideTransition from "./SlideTransition";
+import Skills from "./Skills";
 
 const About = () => {
 	return (
@@ -23,7 +28,7 @@ const About = () => {
 					align="center"
 				>{`Hello, I'm a font-end developer live in VietNam.`}</Box>
 			</SlideTransition>
-			<SlideTransition time={200}>
+			<SlideTransition time={100}>
 				<Box display={{ md: "flex" }}>
 					<Box flexGrow={1}>
 						<Heading as="h2" variant="page-title">
@@ -50,16 +55,35 @@ const About = () => {
 					</Box>
 				</Box>
 			</SlideTransition>
-			<SlideTransition time={400}>
+			<SlideTransition time={200}>
 				<Heading as="h3" variant="section-title">
 					About me:
 				</Heading>
-				<Text>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-					animi hic tenetur quidem, consequuntur deserunt corporis sed officia
-					minima rem sint, nemo, temporibus non vitae ullam quae ipsa eum
-					exercitationem!
+				<Text textAlign="justify">
+					Welcome! My name is Tong Quang Truong, I am a self-taught developer.
+					Starting from no-code in January of 2021, I became obsessed with the
+					world of programming. Going through resources such as{" "}
+					<Link href="https://www.theodinproject.com/" isExternal>
+						The Odin Project
+					</Link>
+					,{" "}
+					<Link href="https://leetcode.com/" isExternal>
+						LeetCode
+					</Link>
+					, and Youtube. I have been developing the necessary skills for
+					becoming a Font-End developer.
 				</Text>
+				<Box display="flex" justifyContent="center" mt={3}>
+					<Button colorScheme="teal" rightIcon={<MdDownload />}>
+						Download my CV
+					</Button>
+				</Box>
+			</SlideTransition>
+			<SlideTransition time={300}>
+				<Heading as="h3" variant="section-title">
+					Familiar with:
+				</Heading>
+				<Skills />
 			</SlideTransition>
 		</Container>
 	);

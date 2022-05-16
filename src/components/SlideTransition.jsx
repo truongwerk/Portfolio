@@ -8,7 +8,10 @@ const SlideTransition = ({ time, children }) => {
 		setTimeout(() => {
 			onOpen();
 		}, time || 0);
-		return onClose();
+		return () => {
+			onClose();
+			console.log("close");
+		};
 	}, []);
 	return (
 		<SlideFade direction="bottom" in={isOpen} unmountOnExit>
