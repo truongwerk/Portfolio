@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import Logo from "./Logo";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Style
 import {
@@ -14,8 +14,11 @@ import {
 	MenuList,
 	Stack,
 	useColorModeValue,
+	Link as ChakraLink,
+	MenuItem,
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import ColorModeButton from "./ColorModeButton";
 
 const LinkItem = ({ link, text, menu }) => {
 	return (
@@ -28,13 +31,14 @@ const LinkItem = ({ link, text, menu }) => {
 };
 
 const Navbar = () => {
+	const navigate = useNavigate();
 	return (
 		<Box
 			position="fixed"
 			as="nav"
 			w="100%"
 			bg={useColorModeValue("#f4ede4", "#202022")}
-			zIndex={10}
+			zIndex={1}
 		>
 			<Container
 				display="flex"
@@ -59,17 +63,40 @@ const Navbar = () => {
 					<LinkItem text="Contact" link="/contact" />
 				</Stack>
 				<Box flex={1} align="right">
+					<ColorModeButton />
 					<Box ml={2} display={{ base: "inline-block", md: "none" }}>
 						<Menu>
 							<MenuButton
 								as={IconButton}
 								icon={<GiHamburgerMenu />}
-								variant="outlined"
+								variant="outline"
 								aria-label="Options"
 							/>
 							<MenuList>
-								<LinkItem text="Projects" menu />
-								<LinkItem text="Contacts" menu />
+								<MenuItem
+									as={ChakraLink}
+									onClick={() => {
+										navigate("/");
+									}}
+								>
+									About
+								</MenuItem>
+								<MenuItem
+									as={ChakraLink}
+									onClick={() => {
+										navigate("/projects");
+									}}
+								>
+									Projects
+								</MenuItem>
+								<MenuItem
+									as={ChakraLink}
+									onClick={() => {
+										navigate("/contact");
+									}}
+								>
+									Contact
+								</MenuItem>
 							</MenuList>
 						</Menu>
 					</Box>

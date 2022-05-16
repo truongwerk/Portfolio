@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 //Style
 import { Text, useColorModeValue } from "@chakra-ui/react";
 import styled from "@emotion/styled";
@@ -15,7 +17,7 @@ const LogoBox = styled.div`
 const Logo = () => {
 	return (
 		<>
-			<a href="#">
+			<Link to="/">
 				<LogoBox>
 					<Text
 						color={useColorModeValue("teal", "whiteAlpha900")}
@@ -24,16 +26,16 @@ const Logo = () => {
 						<FaRobot />
 					</Text>
 					<Text
-						fontFamily="M PLUS Rounded 1c"
+						fontFamily="Dekko"
 						fontWeight="bold"
 						ml={3}
-						fontSize="18px"
+						fontSize="24px"
 						letterSpacing="tighter"
 					>
 						Quang Truong
 					</Text>
 				</LogoBox>
-			</a>
+			</Link>
 		</>
 	);
 };
