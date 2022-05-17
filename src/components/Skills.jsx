@@ -1,7 +1,6 @@
 import { AspectRatio, Heading, Image } from "@chakra-ui/react";
 import { Wrap, WrapItem, Tooltip, useColorModeValue } from "@chakra-ui/react";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
 
 //FontEnd
 import html5 from "../img/skills/font/html5.png";
