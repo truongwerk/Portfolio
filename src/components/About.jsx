@@ -13,12 +13,11 @@ import {
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { MdDownload } from "react-icons/md";
-import logo from "../img/3x4.jpg";
 import Skills from "./Skills";
 
 const About = () => {
 	return (
-		<Container>
+		<Container maxW="550px">
 			<SlideTransition>
 				<Box
 					borderRadius="lg"
@@ -44,7 +43,7 @@ const About = () => {
 					>
 						<AspectRatio ratio={1} w="100px">
 							<Image
-								src={logo}
+								src="/img/3x4.jpg"
 								alt="profileImage"
 								borderColor="whiteAlpha.800"
 								borderWidth={2}
@@ -70,8 +69,12 @@ const About = () => {
 					<Link href="https://leetcode.com/" isExternal>
 						LeetCode
 					</Link>
-					, and Youtube. I have been developing the necessary skills for
-					becoming a Font-End developer.
+					, and{" "}
+					<Link href="https://youtube.com/" isExternal>
+						Youtube
+					</Link>
+					. I have been developing the necessary skills for becoming a Font-End
+					developer.
 				</Text>
 				<Box display="flex" justifyContent="center" mt={3}>
 					<Button colorScheme="teal" rightIcon={<MdDownload />}>
@@ -80,6 +83,14 @@ const About = () => {
 				</Box>
 			</SlideTransition>
 			<SlideTransition time={300}>
+				<Heading as="h3" variant="section-title">
+					I ♥:
+				</Heading>
+				<Text textAlign="justify">
+					Music, Rpg Games, Card Games and Programming.
+				</Text>
+			</SlideTransition>
+			<SlideTransition time={400}>
 				<Heading as="h3" variant="section-title">
 					Familiar with:
 				</Heading>
