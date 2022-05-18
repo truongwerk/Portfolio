@@ -1,0 +1,11 @@
+{
+	"theme_color": "#319795",
+	"background_color": "#f0e7db",
+	"display": "browser",
+	"scope": "/",
+	"start_url": "/github.com",
+	"name": "Truong's Portfolio",
+	"description": "A website about my works.",
+	"short_name": "Portfolio"
+}
+

@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 import { useDisclosure, SlideFade } from "@chakra-ui/react";
 import { useEffect } from "react";
 
@@ -10,7 +11,6 @@ const SlideTransition = ({ time, children }) => {
 		}, time || 0);
 		return () => {
 			onClose();
-			console.log("close");
 		};
 	}, []);
 	return (

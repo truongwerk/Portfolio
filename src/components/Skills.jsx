@@ -1,6 +1,6 @@
 import { AspectRatio, Heading, Image } from "@chakra-ui/react";
-// import styled from "@emotion/styled";
 import { Wrap, WrapItem, Tooltip, useColorModeValue } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
 //FontEnd
@@ -33,7 +33,7 @@ const Skills = () => {
 			<Heading as="h4" fontSize={20} ml={{ base: 4, md: 8 }}>
 				Font-End:
 			</Heading>
-			<Wrap mt={3} mx={{ base: 4, md: 8 }} spacing={3}>
+			<Wrap mt={3} px={{ base: 4, md: 8 }} spacing={3}>
 				{fontEnd.map((skill) => (
 					<Skill key={skill.name} name={skill.name} src={skill.src} />
 				))}
@@ -41,7 +41,7 @@ const Skills = () => {
 			<Heading as="h4" fontSize={20} ml={{ base: 4, md: 8 }} mt={5}>
 				Back-End:
 			</Heading>
-			<Wrap mt={3} mx={{ base: 4, md: 8 }} spacing={3}>
+			<Wrap mt={3} px={{ base: 4, md: 8 }} spacing={3}>
 				{backEnd.map((skill) => (
 					<Skill key={skill.name} name={skill.name} src={skill.src} />
 				))}
@@ -49,7 +49,7 @@ const Skills = () => {
 			<Heading as="h4" fontSize={20} ml={{ base: 4, md: 8 }} mt={5}>
 				Miscellaneous:
 			</Heading>
-			<Wrap mt={3} mx={{ base: 4, md: 8 }} spacing={3}>
+			<Wrap mt={3} px={{ base: 4, md: 8 }} spacing={3}>
 				{misc.map((skill) => (
 					<Skill key={skill.name} name={skill.name} src={skill.src} />
 				))}
@@ -58,20 +58,20 @@ const Skills = () => {
 	);
 };
 
-// TODO: cant scale out of <AspectRatio/>
-// const HoverBox = styled.div`
-// 	&:hover img {
-// 		transition: all 0.3s ease;
-// 		transform: scale(1.1);
-// 	}
-// `;
 
 const Skill = ({ name, src }) => {
 	return (
-		<WrapItem>
+		<WrapItem
+			as={motion.div}
+			whileHover={{ scale: 1.2 }}
+			whileTap={{ scale: 0.9 }}
+			transition="0.1s ease"
+			py={2}
+		>
 			<Tooltip
 				hasArrow
 				label={name}
+				fontSize="large"
 				bg={useColorModeValue("teal.700", "teal.200")}
 			>
 				<AspectRatio

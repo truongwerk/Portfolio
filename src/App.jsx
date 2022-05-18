@@ -1,24 +1,19 @@
-//Style
-import { Container } from "@chakra-ui/react";
-import { Route, Routes } from "react-router-dom";
-import About from "./components/About";
-import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
-import NoMatch from "./components/NoMatch";
-import Projects from "./components/Projects";
+import AnimatedRoute from "./AnimatedRoute";
+
+//Style
+import { Container, Heading } from "@chakra-ui/react";
 
 const App = () => {
 	return (
-		<div className="app">
+		<div className="app" style={{ minHeight: "100vh" }}>
 			<Navbar />
-			<Container maxW="container.md" pt={14}>
-				<Routes>
-					<Route path="/" element={<About />}></Route>
-					<Route path="/projects" element={<Projects />}></Route>
-					<Route path="/contact" element={<Contact />}></Route>
-					<Route path="*" element={<NoMatch />}></Route>
-				</Routes>
+			<Container maxW="container.md" pt={14} minH="calc(100vh - 80px)">
+				<AnimatedRoute />
 			</Container>
+			<Heading textAlign="center" size="md" mt={8} mb={5} bottom={0}>
+				© {new Date().getFullYear()} Tong Quang Truong
+			</Heading>
 		</div>
 	);
 };

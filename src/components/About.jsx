@@ -1,4 +1,4 @@
-import SlideTransition from "./SlideTransition";
+import Skills from "./Skills";
 
 //Style
 import {
@@ -13,20 +13,26 @@ import {
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { MdDownload } from "react-icons/md";
-import Skills from "./Skills";
+import SlideTransition from "./SlideTransition";
+import { motion } from "framer-motion";
 
 const About = () => {
 	return (
-		<Container maxW="550px">
-			<SlideTransition>
-				<Box
-					borderRadius="lg"
-					bg={useColorModeValue("teal.100", "teal.600")}
-					p={3}
-					mb={6}
-					align="center"
-				>{`Hello, I'm a font-end developer live in VietNam.`}</Box>
-			</SlideTransition>
+		<Container
+			maxW="550px"
+			as={motion.div}
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			exit={{ opacity: 0, y: 20 }}
+		>
+			<Box
+				borderRadius="lg"
+				bg={useColorModeValue("teal.100", "teal.600")}
+				p={3}
+				mb={6}
+				align="center"
+			>{`Hello, I'm a font-end developer live in VietNam.`}</Box>
+
 			<SlideTransition time={100}>
 				<Box display={{ md: "flex" }}>
 					<Box flexGrow={1}>
