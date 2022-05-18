@@ -1,5 +1,6 @@
 import {
 	AspectRatio,
+	Button,
 	Container,
 	GridItem,
 	Heading,
@@ -10,6 +11,7 @@ import {
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 
 const Projects = () => {
 	return (
@@ -33,6 +35,18 @@ const Projects = () => {
 					/>
 				))}
 			</SimpleGrid>
+			<a href="https://github.com/truongwerk" target="_blank" rel="noreferrer">
+				<Button
+					colorScheme="teal"
+					variant="outline"
+					leftIcon={<FaGithub />}
+					w="full"
+					mt={4}
+					fontSize='lg'
+				>
+					Github
+				</Button>
+			</a>
 		</Container>
 	);
 };
@@ -74,7 +88,7 @@ const Project = ({ text, href, title, thumbnail }) => (
 	<GridItem w="100%" align="center" cursor="pointer">
 		<Link to={href}>
 			<AspectRatio maxW="full" ratio={1.8}>
-				<Image src={thumbnail} alt={title} borderRadius="xl" />
+				<Image src={thumbnail} alt={title} borderRadius='md' />
 			</AspectRatio>
 			<Heading as="h4" fontSize={20} my={2}>
 				{title}
