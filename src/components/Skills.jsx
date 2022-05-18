@@ -58,7 +58,6 @@ const Skills = () => {
 	);
 };
 
-
 const Skill = ({ name, src }) => {
 	return (
 		<WrapItem
@@ -72,6 +71,7 @@ const Skill = ({ name, src }) => {
 				hasArrow
 				label={name}
 				fontSize="large"
+				closeOnClick={false}
 				bg={useColorModeValue("teal.700", "teal.200")}
 			>
 				<AspectRatio
@@ -81,7 +81,13 @@ const Skill = ({ name, src }) => {
 					borderRadius="2xl"
 					overflow="hidden"
 				>
-					<Image src={src} alt={name} />
+					<Image
+						src={src}
+						alt={name}
+						onContextMenu={(e) => {
+							e.preventDefault();
+						}}
+					/>
 				</AspectRatio>
 			</Tooltip>
 		</WrapItem>
