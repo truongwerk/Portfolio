@@ -51,7 +51,6 @@ const ThreeModel = () => {
 	const refContainer = useRef();
 	const [loading, setLoading] = useState(true);
 	const [renderer, setRenderer] = useState();
-	const [_camera, setCamera] = useState();
 	const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
 	const [initialCameraPosition] = useState(
 		new THREE.Vector3(
@@ -61,7 +60,6 @@ const ThreeModel = () => {
 		)
 	);
 	const [scene] = useState(new THREE.Scene());
-	const [_controls, setControls] = useState();
 
 	const handleWindowResize = useCallback(() => {
 		const { current: container } = refContainer;
@@ -97,12 +95,11 @@ const ThreeModel = () => {
 				scale,
 				scale,
 				-scale,
-				0.01,
+				0.0001,
 				50000
 			);
 			camera.position.copy(initialCameraPosition);
 			camera.lookAt(target);
-			setCamera(camera);
 
 			const ambientLight = new THREE.AmbientLight(0xcccccc, 2);
 			scene.add(ambientLight);
@@ -110,7 +107,6 @@ const ThreeModel = () => {
 			const controls = new OrbitControls(camera, renderer.domElement);
 			controls.autoRotate = true;
 			controls.target = target;
-			setControls(controls);
 
 			loadGLTFModel(scene, "/model/smolAme/scene.gltf", {
 				receiveShadow: true,
@@ -166,11 +162,10 @@ const ThreeModel = () => {
 			className="threeModel"
 			m="auto"
 			mt={["-20px", "-60px", "-120px"]}
-			mb={4}
+			mb={2}
 			w={[280, 420, 540]}
 			h={[280, 420, 540]}
 			position="relative"
-	
 		>
 			{loading && (
 				<Spinner

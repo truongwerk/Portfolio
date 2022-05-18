@@ -22,11 +22,15 @@ import ColorModeButton from "./ColorModeButton";
 
 const LinkItem = ({ link, text, menu }) => {
 	return (
-		<Link to={link || ""}>
-			<Button colorScheme="teal" variant="ghost" w={menu ? "full" : "auto"}>
-				{text}
-			</Button>
-		</Link>
+		<Button
+			as={Link}
+			to={link || ""}
+			colorScheme="teal"
+			variant="ghost"
+			w={menu ? "full" : "auto"}
+		>
+			{text}
+		</Button>
 	);
 };
 
@@ -61,6 +65,7 @@ const Navbar = () => {
 				>
 					<LinkItem text="Projects" link="/projects" />
 					<LinkItem text="Contact" link="/contact" />
+					<LinkItem text="404 " link="/404" />
 				</Stack>
 				<Box flex={1} align="right">
 					<ColorModeButton />
@@ -96,6 +101,14 @@ const Navbar = () => {
 									}}
 								>
 									Contact
+								</MenuItem>
+								<MenuItem
+									as={ChakraLink}
+									onClick={() => {
+										navigate("/404");
+									}}
+								>
+									404 Page
 								</MenuItem>
 							</MenuList>
 						</Menu>
