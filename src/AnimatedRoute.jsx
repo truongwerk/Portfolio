@@ -4,6 +4,7 @@ import Contact from "./components/Contact";
 import NoMatch from "./components/NoMatch";
 import Projects from "./components/Projects";
 import { AnimatePresence } from "framer-motion";
+import ProjectDetail from "./components/ProjectDetail";
 
 const AnimatedRoute = () => {
 	const location = useLocation();
@@ -12,6 +13,7 @@ const AnimatedRoute = () => {
 			<Routes location={location} key={location.pathname}>
 				<Route path="/" element={<About />}></Route>
 				<Route path="/projects" element={<Projects />}></Route>
+				<Route path="/projects/:id" element={<ProjectDetail />} />
 				<Route path="/contact" element={<Contact />}></Route>
 				<Route path="*" element={<NoMatch />}></Route>
 			</Routes>

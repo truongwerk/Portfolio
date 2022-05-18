@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
+import projectData from "../projectData";
 
 const Projects = () => {
 	return (
@@ -42,7 +43,7 @@ const Projects = () => {
 					leftIcon={<FaGithub />}
 					w="full"
 					mt={4}
-					fontSize='lg'
+					fontSize="lg"
 				>
 					Github
 				</Button>
@@ -51,44 +52,13 @@ const Projects = () => {
 	);
 };
 
-const projectData = [
-	{
-		href: "fb-clone",
-		title: "Facebook Clone",
-		text: "A simple social app, you can post, like, unlike and comment.",
-	},
-	{
-		href: "Memory-games",
-		title: "Memory Games",
-		text: "Train your memory muscles with Match Magic and Fruit Memorize!",
-	},
-	{
-		href: "CV-Application",
-		title: "CV Application",
-		text: "Create a CV with: basic infos, contacts, skills...",
-	},
-	{
-		href: "Fortnite-Item-Store",
-		title: "Fortnite Item Store",
-		text: "A shopping cart with fortnite database.",
-	},
-	{
-		href: "Weather-App",
-		title: "Weather App",
-		text: "Check current weather with search location or gps.",
-	},
-	{
-		href: "Todo-List",
-		title: "Todo List",
-		text: "A simple Todo List can divide by project, date count. ",
-	},
-];
+
 
 const Project = ({ text, href, title, thumbnail }) => (
 	<GridItem w="100%" align="center" cursor="pointer">
 		<Link to={href}>
 			<AspectRatio maxW="full" ratio={1.8}>
-				<Image src={thumbnail} alt={title} borderRadius='md' />
+				<Image src={thumbnail} alt={title} borderRadius="md" />
 			</AspectRatio>
 			<Heading as="h4" fontSize={20} my={2}>
 				{title}
