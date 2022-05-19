@@ -82,9 +82,11 @@ const About = () => {
 					developer.
 				</Text>
 				<Box display="flex" justifyContent="center" mt={3}>
-					<Button colorScheme="teal" rightIcon={<MdDownload />}>
-						Download my CV
-					</Button>
+					<a href="/img/3x4.jpg" download="TongQuangTruong2">
+						<Button colorScheme="teal" rightIcon={<MdDownload />}>
+							Download my CV
+						</Button>
+					</a>
 				</Box>
 			</SlideTransition>
 			<SlideTransition time={300}>

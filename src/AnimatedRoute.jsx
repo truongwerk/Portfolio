@@ -1,5 +1,5 @@
 import React from "react";
-import About from "./components/About";
+const About = React.lazy(() => import("./components/About"));
 const Contact = React.lazy(() => import("./components/Contact"));
 const NoMatch = React.lazy(() => import("./components/NoMatch"));
 const Projects = React.lazy(() => import("./components/Projects"));

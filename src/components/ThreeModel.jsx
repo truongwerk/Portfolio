@@ -2,6 +2,8 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+//Style
 import { Box, Spinner } from "@chakra-ui/react";
 
 //Make Ease Out Model 3d rotate
