@@ -65,7 +65,7 @@ const ProjectDetail = () => {
 			<Bread href={data.href} />
 			{data.href === "" ? null : (
 				<Box my={4}>
-					<Heading as="h2" variant="section-title">
+					<Heading as="h2" variant="section-title" textAlign="center">
 						{data.title}
 					</Heading>
 					<Image src={`/img/projects/${data.href}/1.png`} borderRadius="lg" />
@@ -131,7 +131,7 @@ const Stat = ({ stat, children }) => (
 
 const Bread = ({ href }) => (
 	<Breadcrumb
-		spacing={2}
+		spacing={1}
 		separator={<AiOutlineCaretRight />}
 		fontSize={20}
 		color={useColorModeValue("teal.800", "teal.100")}

@@ -22,8 +22,8 @@ const Projects = () => {
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: 20 }}
 		>
-			<Heading as="h3" fontSize={20} mb={4} variant="section-title">
-				Projects
+			<Heading as="h2" mb={4} >
+				Projects:
 			</Heading>
 			<SimpleGrid columns={[1, 1, 2]} spacing={6} my={4}>
 				{projectData.map((item) => (
