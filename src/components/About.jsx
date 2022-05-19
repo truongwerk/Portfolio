@@ -82,7 +82,7 @@ const About = () => {
 					developer.
 				</Text>
 				<Box display="flex" justifyContent="center" mt={3}>
-					<a href="/img/3x4.jpg" download="TongQuangTruong2">
+					<a href="/TongQuangTruong.pdf" target="_blank">
 						<Button colorScheme="teal" rightIcon={<MdDownload />}>
 							Download my CV
 						</Button>
