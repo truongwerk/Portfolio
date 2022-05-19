@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import projectData from "../projectData";
+
+//Style
 import {
 	AspectRatio,
 	Button,
@@ -8,11 +12,9 @@ import {
 	SimpleGrid,
 	Text,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
-import projectData from "../projectData";
 
 const Projects = () => {
 	return (
@@ -22,7 +24,7 @@ const Projects = () => {
 			animate={{ opacity: 1, y: 0 }}
 			exit={{ opacity: 0, y: 20 }}
 		>
-			<Heading as="h2" mb={4} >
+			<Heading as="h2" mb={4}>
 				Projects:
 			</Heading>
 			<SimpleGrid columns={[1, 1, 2]} spacing={6} my={4}>
@@ -51,8 +53,6 @@ const Projects = () => {
 		</Container>
 	);
 };
-
-
 
 const Project = ({ text, href, title, thumbnail }) => (
 	<GridItem w="100%" align="center" cursor="pointer">

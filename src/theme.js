@@ -33,7 +33,6 @@ const components = {
 
 const fonts = {
 	heading: `Roboto Condensed, ${base.fonts.heading}`,
-	// body: `Roboto Condensed, ${base.fonts.body}`,
 };
 
 const colors = {

@@ -1,3 +1,9 @@
+import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
+import { useNavigate, useLocation, Link } from "react-router-dom";
+import projectData from "../projectData";
+
+//Style
 import {
 	Badge,
 	Box,
@@ -14,13 +20,8 @@ import {
 	UnorderedList,
 	ListItem,
 } from "@chakra-ui/react";
-import PropTypes from "prop-types";
-
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useNavigate, useLocation, Link } from "react-router-dom";
 import { AiOutlineCaretRight } from "react-icons/ai";
-import projectData from "../projectData";
 
 const ProjectDetail = () => {
 	const navigate = useNavigate();

@@ -1,3 +1,7 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
+//Style
 import {
 	Button,
 	Container,
@@ -11,12 +15,9 @@ import {
 	Input,
 	Textarea,
 } from "@chakra-ui/react";
-
 import { motion } from "framer-motion";
 import { FaDiscord, FaFacebook, FaGithub, FaTwitter } from "react-icons/fa";
 import SlideTransition from "./SlideTransition";
-import emailjs from "@emailjs/browser";
-import { useRef } from "react";
 
 const Contact = () => {
 	return (
@@ -96,7 +97,6 @@ const Contact = () => {
 
 const Email = () => {
 	const form = useRef();
-
 	const sendEmail = (e) => {
 		e.preventDefault();
 		emailjs

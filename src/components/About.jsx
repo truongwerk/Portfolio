@@ -32,7 +32,6 @@ const About = () => {
 				mb={6}
 				align="center"
 			>{`Hi!, I'm a font-end developer from VietNam.`}</Box>
-
 			<SlideTransition time={100}>
 				<Box display={{ md: "flex" }}>
 					<Box flexGrow={1}>

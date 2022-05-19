@@ -1,10 +1,14 @@
-import { Route, Routes, useLocation } from "react-router-dom";
+import React from "react";
 import About from "./components/About";
-import Contact from "./components/Contact";
-import NoMatch from "./components/NoMatch";
-import Projects from "./components/Projects";
+const Contact = React.lazy(() => import("./components/Contact"));
+const NoMatch = React.lazy(() => import("./components/NoMatch"));
+const Projects = React.lazy(() => import("./components/Projects"));
+const ProjectDetail = React.lazy(() => import("./components/ProjectDetail"));
+
+import { Route, Routes, useLocation } from "react-router-dom";
+
+//Have animations after unmount route
 import { AnimatePresence } from "framer-motion";
-import ProjectDetail from "./components/ProjectDetail";
 
 const AnimatedRoute = () => {
 	const location = useLocation();

@@ -1,5 +1,6 @@
-/* eslint-disable react/prop-types */
+import PropTypes from "prop-types";
 import Logo from "./Logo";
+import ColorModeButton from "./ColorModeButton";
 import { Link, useNavigate } from "react-router-dom";
 
 //Style
@@ -18,20 +19,17 @@ import {
 	MenuItem,
 } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import ColorModeButton from "./ColorModeButton";
 
-const LinkItem = ({ link, text, menu }) => {
+const LinkItem = ({ link, text }) => {
 	return (
-		<Button
-			as={Link}
-			to={link || ""}
-			colorScheme="teal"
-			variant="ghost"
-			w={menu ? "full" : "auto"}
-		>
+		<Button as={Link} to={link || ""} colorScheme="teal" variant="ghost">
 			{text}
 		</Button>
 	);
+};
+LinkItem.propTypes = {
+	link: PropTypes.string,
+	text: PropTypes.string,
 };
 
 const Navbar = () => {

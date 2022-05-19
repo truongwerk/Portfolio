@@ -1,15 +1,19 @@
-import { Box, Spinner } from "@chakra-ui/react";
 import { useEffect, useRef, useState, useCallback } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { Box, Spinner } from "@chakra-ui/react";
 
+//Make Ease Out Model 3d rotate
 function easeOutCirc(x) {
 	return Math.sqrt(1 - Math.pow(x - 1, 4));
 }
 
+//Make model animating with THREE.js clock
 let mixer;
 const clock = new THREE.Clock();
+
+//Loading model, Return a promise model.
 function loadGLTFModel(
 	scene,
 	glbPath,
@@ -21,6 +25,7 @@ function loadGLTFModel(
 		loader.load(
 			glbPath,
 			(gltf) => {
+				//Set model position, shadow...
 				const obj = gltf.scene;
 				obj.name = "model";
 				obj.position.x = 0;
@@ -28,8 +33,8 @@ function loadGLTFModel(
 				obj.receiveShadow = receiveShadow;
 				obj.castShadow = castShadow;
 				scene.add(obj);
-				const model = gltf.scene.children[0];
-				mixer = new THREE.AnimationMixer(model);
+				//Make model's animation play
+				mixer = new THREE.AnimationMixer(obj);
 				mixer.clipAction(gltf.animations[0]).play();
 				obj.traverse(function (child) {
 					if (child.isMesh) {
@@ -50,8 +55,8 @@ function loadGLTFModel(
 const ThreeModel = () => {
 	const refContainer = useRef();
 	const [loading, setLoading] = useState(true);
-	const [renderer, setRenderer] = useState();
 	const [target] = useState(new THREE.Vector3(-0.5, 1.2, 0));
+	const [renderer, setRenderer] = useState();
 	const [initialCameraPosition] = useState(
 		new THREE.Vector3(
 			20 * Math.sin(0.2 * Math.PI),
@@ -66,7 +71,6 @@ const ThreeModel = () => {
 		if (container && renderer) {
 			const scW = container.clientWidth;
 			const scH = container.clientHeight;
-
 			renderer.setSize(scW, scH);
 		}
 	}, [renderer]);
@@ -76,7 +80,6 @@ const ThreeModel = () => {
 		if (container && !renderer) {
 			const scW = container.clientWidth;
 			const scH = container.clientHeight;
-
 			const renderer = new THREE.WebGLRenderer({
 				antialias: true,
 				alpha: true,
@@ -87,8 +90,6 @@ const ThreeModel = () => {
 			container.appendChild(renderer.domElement);
 			setRenderer(renderer);
 
-			// 640 -> 240
-			// 8   -> 6
 			const scale = scH * 0.005 + 0.2;
 			const camera = new THREE.OrthographicCamera(
 				-scale,

@@ -1,7 +1,8 @@
+import PropTypes from "prop-types";
+
 import { AspectRatio, Heading, Image } from "@chakra-ui/react";
 import { Wrap, WrapItem, Tooltip, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import PropTypes from "prop-types";
 
 //FontEnd
 const fontEnd = [
