@@ -38,7 +38,7 @@ const About = () => {
 						<Heading as="h2" variant="page-title">
 							Tong Quang Truong
 						</Heading>
-						<Text>Font-End Developer</Text>
+						<Text>Front-End Developer</Text>
 					</Box>
 					<Box
 						flexShrink={0}
@@ -78,7 +78,7 @@ const About = () => {
 					<Link href="https://youtube.com/" isExternal>
 						Youtube
 					</Link>
-					. I have been developing the necessary skills for becoming a Font-End
+					. I have been developing the necessary skills for becoming a Front-End
 					developer.
 				</Text>
 				<Box display="flex" justifyContent="center" mt={3}>
