@@ -4,16 +4,16 @@ import { AspectRatio, Heading, Image } from "@chakra-ui/react";
 import { Wrap, WrapItem, Tooltip, useColorModeValue } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-//FontEnd
-const fontEnd = [
-	{ name: "HTML5", src: "/img/skills/font/html5.png" },
-	{ name: "CSS3", src: "/img/skills/font/css3.png" },
-	{ name: "Javascript", src: "/img/skills/font/javascript.png" },
-	{ name: "React", src: "/img/skills/font/react.png" },
-	{ name: "React Router", src: "/img/skills/font/Router.png" },
-	{ name: "Zustand", src: "/img/skills/font/zustand.png" },
-	{ name: "Chakra UI", src: "/img/skills/font/chakra.png" },
-	{ name: "MUI", src: "/img/skills/font/MUI.png" },
+//FrontEnd
+const frontEnd = [
+	{ name: "HTML5", src: "/img/skills/front/html5.png" },
+	{ name: "CSS3", src: "/img/skills/front/css3.png" },
+	{ name: "Javascript", src: "/img/skills/front/javascript.png" },
+	{ name: "React", src: "/img/skills/front/react.png" },
+	{ name: "React Router", src: "/img/skills/front/Router.png" },
+	{ name: "Zustand", src: "/img/skills/front/zustand.png" },
+	{ name: "Chakra UI", src: "/img/skills/front/chakra.png" },
+	{ name: "MUI", src: "/img/skills/front/MUI.png" },
 ];
 
 //BackEnd
@@ -32,10 +32,10 @@ const Skills = () => {
 	return (
 		<>
 			<Heading as="h4" fontSize={20} ml={{ base: 4, md: 8 }}>
-				Font-End:
+				Front-End:
 			</Heading>
 			<Wrap mt={3} px={{ base: 4, md: 8 }} spacing={3}>
-				{fontEnd.map((skill) => (
+				{frontEnd.map((skill) => (
 					<Skill key={skill.name} name={skill.name} src={skill.src} />
 				))}
 			</Wrap>
