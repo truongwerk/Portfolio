@@ -8,7 +8,8 @@ import { motion } from "framer-motion";
 const frontEnd = [
 	{ name: "HTML5", src: "/img/skills/front/html5.png" },
 	{ name: "CSS3", src: "/img/skills/front/css3.png" },
-	{ name: "Javascript", src: "/img/skills/front/javascript.png" },
+	{ name: "JavaScript", src: "/img/skills/front/javascript.png" },
+	{ name: "TypeScript", src: "/img/skills/front/typescript.png" },
 	{ name: "React", src: "/img/skills/front/react.png" },
 	{ name: "React Router", src: "/img/skills/front/Router.png" },
 	{ name: "Zustand", src: "/img/skills/front/zustand.png" },

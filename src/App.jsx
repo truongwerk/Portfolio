@@ -17,7 +17,7 @@ const App = () => {
 				<AnimatedRoute />
 			</Container>
 			<Heading textAlign="center" size="md" mt={8} mb={3}>
-				© {new Date().getFullYear()} Tong Quang Truong2
+				© {new Date().getFullYear()} Tong Quang Truong
 			</Heading>
 		</div>
 	);
