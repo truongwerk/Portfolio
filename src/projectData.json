@@ -1,5 +1,24 @@
 [
 	{
+		"href": "Fitness_Exercises",
+		"title": "Fitness Application",
+		"text": "A site you can search for exercises",
+		"image": 3,
+		"live": "https://truonggym.netlify.app/",
+		"code": "https://github.com/truongwerk/Fitness_Exercises",
+		"features": [
+			"Search for exercises by name, target muscle, equipment.",
+			"Dynamic routing.",
+			"Each exercise has body part, target muscle, equipment, youtube videos and similar exercises.",
+			"Responsive."
+		],
+		"build": [
+			"React.",
+			"Mui.",
+			"Vite."
+		]
+	},
+	{
 		"href": "fb-clone",
 		"title": "Facebook Clone",
 		"text": "A simple social app, you can post, like, unlike and comment.",
