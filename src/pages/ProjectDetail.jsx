@@ -37,10 +37,10 @@ const ProjectDetail = () => {
 	const [another, setAnother] = useState([]);
 	useEffect(() => {
 		checkValid(location);
-	}, []);
+	}, [location]);
 
 	useEffect(() => {
-		let array = [];
+		const array = [];
 		for (let i = 2; i <= data.image; i++) {
 			array.push(i);
 		}
@@ -105,7 +105,7 @@ const ProjectDetail = () => {
 								key={item}
 								src={`/img/projects/${data.href}/${item}.png`}
 								borderRadius="lg"
-							></Image>
+							/>
 						))}
 					</Stack>
 				</Box>

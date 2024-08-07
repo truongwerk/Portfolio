@@ -1,4 +1,4 @@
-import Skills from "./Skills";
+import Skills from "../components/Skills";
 
 //Style
 import {
@@ -13,7 +13,7 @@ import {
 	useColorModeValue,
 } from "@chakra-ui/react";
 import { MdDownload } from "react-icons/md";
-import SlideTransition from "./SlideTransition";
+import SlideTransition from "../components/SlideTransition";
 import { motion } from "framer-motion";
 
 const About = () => {
@@ -82,7 +82,7 @@ const About = () => {
 					developer.
 				</Text>
 				<Box display="flex" justifyContent="center" mt={3}>
-					<a href="/TongQuangTruong.pdf" target="_blank">
+					<a href="/TongQuangTruong.pdf" target="_blank" rel="noreferrer">
 						<Button colorScheme="teal" rightIcon={<MdDownload />}>
 							Download my CV
 						</Button>

@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import AnimatedRoute from "./AnimatedRoute";
+import AnimatedRoute from "./Router";
 import React from "react";
 
 //Lazy load 3d model

@@ -61,6 +61,7 @@ const Navbar = () => {
 					flexGrow={1}
 					mt={{ base: 4, md: 0 }}
 				>
+					<LinkItem text="Experiences" link="/experiences" />
 					<LinkItem text="Projects" link="/projects" />
 					<LinkItem text="Contact" link="/contact" />
 					<LinkItem text="404 " link="/404" />
