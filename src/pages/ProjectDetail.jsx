@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useNavigate, useLocation, Link } from "react-router-dom";
-import projectData from "../projectData";
+import projectData from "../json/projectData.json";
 
 //Style
 import {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import projectData from "../projectData";
+import projectData from "../json/projectData.json";
 
 //Style
 import {
@@ -13,6 +13,7 @@ import {
 	Text,
 } from "@chakra-ui/react";
 import PropTypes from "prop-types";
+import SlideTransition from "../components/SlideTransition";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
@@ -28,8 +29,9 @@ const Projects = () => {
 				Projects:
 			</Heading>
 			<SimpleGrid columns={[1, 1, 2]} spacing={6} my={4}>
-				{projectData.map((item) => (
+				{projectData.map((item, index) => (
 					<Project
+						index={index}
 						key={item.href}
 						href={item.href}
 						title={item.title}
@@ -54,17 +56,19 @@ const Projects = () => {
 	);
 };
 
-const Project = ({ text, href, title, thumbnail }) => (
+const Project = ({ text, href, title, thumbnail, index }) => (
 	<GridItem w="100%" align="center" cursor="pointer">
-		<Link to={href}>
-			<AspectRatio maxW="full" ratio={1.8}>
-				<Image src={thumbnail} alt={title} borderRadius="md" />
-			</AspectRatio>
-			<Heading as="h4" fontSize={20} my={2}>
-				{title}
-			</Heading>
-			<Text>{text}</Text>
-		</Link>
+		<SlideTransition time={index*200 + 100}>
+			<Link to={href}>
+				<AspectRatio maxW="full" ratio={1.8}>
+					<Image src={thumbnail} alt={title} borderRadius="md" />
+				</AspectRatio>
+				<Heading as="h4" fontSize={20} my={2}>
+					{title}
+				</Heading>
+				<Text>{text}</Text>
+			</Link>
+		</SlideTransition>
 	</GridItem>
 );
 Project.propTypes = {

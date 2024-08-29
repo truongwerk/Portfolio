@@ -37,7 +37,7 @@ const About = () => {
 					>
 						<AspectRatio ratio={1} w="100px">
 							<Image
-								src="/img/3x4.jpg"
+								src="/img/exp/exp_fdata.jpeg"
 								alt="profileImage"
 								borderColor="whiteAlpha.800"
 								borderWidth={2}
@@ -49,13 +49,13 @@ const About = () => {
 				</Box>
 			</SlideTransition>
 			<Box h={8} />
-			<SlideTransition time={200}>
+			<SlideTransition time={300}>
 				<Box display={{ md: "flex" }}>
 					<Box flexGrow={1}>
 						<Heading as="h2" variant="page-title">
 							Fdata - Intern
 						</Heading>
-						<Text>2022-2024</Text>
+						<Text>2022-2023</Text>
 						<Text>  </Text>
 					</Box>
 					<Box
@@ -66,7 +66,7 @@ const About = () => {
 					>
 						<AspectRatio ratio={1} w="100px">
 							<Image
-								src="/img/3x4.jpg"
+								src="/img/exp/exp_ivc.png"
 								alt="profileImage"
 								borderColor="whiteAlpha.800"
 								borderWidth={2}
